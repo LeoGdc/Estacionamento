@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styele.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/section.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="js/darkMode.js" defer></script>
+    <script src="js/getJson.js" defer></script>
+    <!-- <script src="js/consumoApi.js" defer></script> -->
+    <script src="js/modal.js" defer></script>
+    <title>Estacionamento</title>
+</head>
+<body>
+    <header>
+        <div class="dkTheme-sectionLogo" id="sectionLogo">
+            <img id="logo" src="img/fastParkingLogo.png" alt="">
+            <a href="../ProjetoEstacionamento/pages/relatorios/relatorio.html">
+                <button id="btnRelatorio">Relatórios</button>
+            </a>
+        </div>
+        <div class="theme-changeSectioninfo" id="sectionInfo">
+            <p class="headerTextSection">Vagas Totais:60</p>
+            <p class="headerTextSection">Vagas Restantes:3</p>
+            <p class="headerTextSection">Valor 1ª HORA: R$#</p>
+            <p class="headerTextSection">Valor Demais HORAS: R$#</p>
+            <a href="../ProjetoEstacionamento/pages/editpage/editpage.html">
+                <button  id="btnVagaValor">Alterar Vagas/Valor</button>
+            </a>
+            <div></div>
+        </div>
+    </header>
+    <main class="theme-change">
+        <h1>Veículos Estacionados</h1>
+        <section id="tblSection">
+            <table class="dkTheme-table" id="tabela">
+                <tr id="trTitulo">
+                    <th id="dkTheme-tblTitulo" class="tblTitulo">Nome</th>
+                    <th id="dkTheme-tblTitulo" class="tblTitulo">Veículo</th>
+                    <th id="dkTheme-tblTitulo" class="tblTitulo">Placa</th>
+                    <th id="dkTheme-tblTitulo" class="tblTitulo">H.Entrada</th>
+                    <th id="dkTheme-tblTitulo" class="tblTitulo">H.Saida</th>
+                    <th id="dkTheme-tblTitulo" class="tblTitulo">Editar</th>
+                    <th id="dkTheme-tblTitulo" class="tblTitulo">Encerrar</th>
+                </tr>
+            </table>
+            </section>
+        <button id="btnAddVeiculo">Adicionar Novo Veículo</button>
+        <!-- -Moldal- -->
+        <div class="modal registro" id="modal">
+            <div class="modal-content" id="modal-content">
+                <div id="modalBody">
+                    <header class="modal-header">
+                        <h2>Novo Registro</h2>
+                        <span class="fecharNovoRegistro" id="btnFecharRegistro">&#10006;</span>
+                    </header>
+                    <form class="modal-form" id="modal-form">
+                        <div class="modal-field-container">
+                            <input type="text" class="modal-field" placeholder="Nome do Cliente" id="nome" required>
+                            <input type="email" class="modal-field" placeholder="Veículo" id="veiculo" required pattern=".+@.+\..+">
+                            <input type="text" class="modal-field" placeholder="Placa" id="placa" required minlength="7" maxlength="7"> 
+                        </div>
+                    </form>
+                    <div class="buttons">
+                        <button class="button-imprimir print"  onclick="window.location.href = 'comprovanteDeEntrada.html'" >Imprimir</button>
+                        <button class="button-salvar" id="btnFinalizar">Salvar</button>
+                    </div>
+                </div>
+            </div>    
+        </div> 
+        <!-- -/Moldal- -->
+    </main>
+    <footer class="dkTheme-Footer">
+        <div id="btnDarkMode">
+            <label class="switch">
+                <input id="btn-dark" class="inputdk"  type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </footer>
+</body>
+</html>

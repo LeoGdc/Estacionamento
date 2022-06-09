@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/section.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <script src="./js/confEdit.js" defer></script>
+    <title>Edit</title>
+</head>
+<body>
+    <header>
+        <div class="dkTheme-sectionLogo" id="sectionLogo">
+            <img id="logo" src="/img/fastParkingLogo.png" alt="">
+            <a href="/index.html">
+                <button id="btnVoltar">Voltar</button>
+            </a>
+        </div>
+        <div class="theme-changeSectioninfo" id="sectionInfo">
+        </div>
+    </header>
+    <main>
+        <h1>Editar Valor e Hora</h1>
+        <section>
+            <div id="sectionDados">
+                <div class="boxEdit">
+                    <P class="textBoxEdit">Vagas Totais:</P>
+                    <input  placeholder="60" type="text" name="" id="inputBoxEdit1" disabled>
+                </div>
+                <div class="boxEdit">
+                    <P class="textBoxEdit">Valor Primeira Hora:</P>
+                    <input  placeholder="10" type="text" name="" id="inputBoxEdit2" disabled>
+                </div>
+                <div class="boxEdit">
+                    <P class="textBoxEdit">Valor Demais Horas:</P>
+                    <input  placeholder="5" type="text" name="" id="inputBoxEdit3" disabled>
+                </div>
+            </div>
+            <div id="sectionButton">
+                <button id="btnConfirmar" disabled>Confirmar</button>
+                <button id="btnEditar">Editar</button>
+            </div>
+        </section>
+    </main>
+    <footer class="dkTheme-Footer">
+        <div id="btnDarkMode">
+            <label class="switch">
+                <input id="btn-dark"  type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </footer>
+</body>
+</html>

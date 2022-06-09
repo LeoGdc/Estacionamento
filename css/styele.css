@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Alumni Sans', sans-serif;
+    
+}
+body{
+    overflow: hidden;
+}
+
+.dark-mode {
+    background-color: #001233 !important;
+    color: white !important;
+}
+.dark-sectioninfo {
+    background-color: #7D8597 !important;
+    color: white !important;
+}
+.dark-sectionlogo {
+    background-color: #a0a5ad !important;
+    color: white !important;
+}
+.dark-modeTbltitulo{
+    background-color: #5C677D !important;
+    color: white !important;
+}
+.dark-modeTblconteudo{
+    background-color: #002855 !important;
+    color: white !important;
+}
+.dark-footer{
+  background-color: #a0a5ad !important;
+  color: white !important;
+}
+.dark-table{
+  background-color: #898aa1 !important;
+  color: white !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans&display=swap');

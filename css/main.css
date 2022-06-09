@@ -1,0 +1,50 @@
+main{
+    background-color: gainsboro;
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#btnAddVeiculo {
+    cursor: pointer;
+    margin-top: 10px;
+    width: 180px;
+    height:50px;
+    border: unset;
+    color: #000000;
+    z-index: 1;
+    background: #f8d866;
+    position: relative;
+    font-weight: 1000;
+    font-size: 15px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 8px 8px 19px -3px rgba(0, 0, 0, 0.723);
+    transition: all 250ms;
+    overflow: hidden;
+   }
+   
+   #btnAddVeiculo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 2px 4px 8px -6px rgba(0,0,0,0.27);
+    transition: all 250ms
+   }
+   
+   #btnAddVeiculo:hover {
+    color: #ffffff;
+   }
+   
+   #btnAddVeiculo:hover::before {
+    width: 100%;
+   }
+   

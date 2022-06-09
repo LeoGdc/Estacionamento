@@ -1,0 +1,69 @@
+section{
+    background-color: #BCBCBC;
+    width: 60vw;
+    height: 50vh;
+    border-radius: 30px;
+    box-shadow: 15px 10px 15px -3px rgba(0,0,0,0.32);
+}
+#sectionDados{
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+.boxEdit{
+    padding-top: 50px;
+}
+.textBoxEdit{
+    font-size: 1.5rem;
+}
+#inputBoxEdit1{
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    border: none;
+    outline: none;
+    box-shadow: 11px 16px 15px -3px rgba(0,0,0,0.24);
+}
+#inputBoxEdit2{
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    border: none;
+    outline: none;
+    box-shadow: 11px 16px 15px -3px rgba(0,0,0,0.24);
+}
+#inputBoxEdit3{
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    border: none;
+    outline: none;
+    box-shadow: 11px 16px 15px -3px rgba(0,0,0,0.24);
+}
+#sectionButton{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+#btnEditar{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+}
+#btnConfirmar{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+}

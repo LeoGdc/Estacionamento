@@ -1,0 +1,175 @@
+:root{
+    --bkModal: #fff;
+}
+.modal{
+    background-color: rgba(0, 0, 0, 0.555);
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    
+}
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 30vh auto;
+    background-color: white;
+    border: solid 2px;
+}
+.modal-header{
+    background-color: var(--bkModal);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 70px;
+    line-height: 40px;
+    font-size: 1rem;
+}
+.modal.active{
+    display: block;
+    z-index: 1;
+}
+.modal-form{
+    background-color: var(--bkModal) ;
+}
+.fecharNovoRegistro{
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+.modal-close:hover{
+    background-color: #FF4949;
+    color: white;
+}
+.modal-form{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 20px;
+}
+.modal-field-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-field{
+    width: 80%;
+    height: 40px;
+    outline-style: none;
+    border-style: none;
+    box-shadow: 0 0 2px black;
+    padding: 0 10px;
+    font-size:1rem;
+}
+.buttons{
+    background-color: var(--bkModal);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;    
+}
+
+.button-imprimir{
+    width: 100px;
+    height: 30px;
+    background-color: #D9D9D9;
+    border-style: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-salvar{
+    width: 100px;
+    height: 30px;
+    background-color: #D9D9D9;
+    border-style: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buttons :hover{
+    background-color: black;
+    color: white;
+}
+
+/*modal de fechamento*/
+
+.fechamento {
+    display: none;
+}
+
+.fechamento.active{
+    display: block;
+}
+
+.modal-fechamento {
+    width: 300px;
+    height: 400px;
+     display: flex; 
+    flex-direction: column;
+    align-items: center;
+    border: solid 3px;
+    border-radius: 20px;
+}
+
+.modal-fechamento h3{
+    text-align: center;
+    font-size: 20px;
+    align-items: center;
+}
+
+.dados-fechamento{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#btnFecharRegistro {
+    text-align: center; 
+    border-radius: 15px;
+    box-shadow: 0px 2px 2px black;
+    width: 30px;
+    height: 30px;
+}
+
+#valor-total{
+    background-color: #EF1414;
+    border-radius: 20px;
+    height: auto;
+    color: white;
+}
+
+.modal-fechamento button{
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 25px;
+    border-style: none;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 20px;
+}
+
+@media print {
+    header
+    main{
+        display: none;
+    }
+}

@@ -1,0 +1,113 @@
+section{
+    background-color: ghostwhite;
+    width: 80vw;
+    height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+th, td {
+    padding: 0px;  /* cellpadding */
+}
+table{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    border-collapse: collapse; border-spacing: 0; /* cellspacing */
+    display: flex;
+    flex-direction: column;
+    background-color:#e1e2e3;
+}
+.tblTitulo{
+    width: 80vw;
+    height: 8vh;
+    background-color:#8b8b8b;
+    color: black;
+    border: solid 0.1px;
+    font: 2em sans-serif white;
+}
+.TblConteudo{
+    /* border-bottom: solid 2px #a1a1a1; */
+    border: solid 2px #a1a1a1;
+    width: 80vw;
+    height: 8vh;
+    background-color:#c2bebe;
+    text-align: center;
+}
+/* From uiverse.io by @alexroumi */
+#deletar {
+    cursor: pointer;
+    width: 80%;
+    height: 80%;
+    border: unset;
+    color: #ffffff;
+    z-index: 1;
+    background: #af3d3d;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+   }
+   
+   #deletar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 2px 4px 8px -6px rgba(0,0,0,0.27);
+    transition: all 250ms
+   }
+   
+   #deletar:hover {
+    color: #ffffff;
+   }
+   
+   #deletar:hover::before {
+    width: 100%;
+   }
+   #editar {
+    cursor: pointer;
+    width: 80%;
+    height: 80%;
+    border: unset;
+    color: #ffffff;
+    z-index: 1;
+    background: #026b25;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+   }
+   
+   #editar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 2px 4px 8px -6px rgba(0,0,0,0.27);
+    transition: all 250ms
+   }
+   
+   #editar:hover {
+    color: #ffffff;
+   }
+   
+   #editar:hover::before {
+    width: 100%;
+   }
+   
