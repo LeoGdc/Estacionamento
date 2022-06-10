@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/modal.css">
     <script src="js/darkMode.js" defer></script>
-    <script src="js/getJson.js" defer></script>
+    <script src="js/getJson.js" defer type="module"></script>
     <!-- <script src="js/consumoApi.js" defer></script> -->
-    <script src="js/modal.js" defer></script>
+    
     <title>Estacionamento</title>
 </head>
 <body>
@@ -38,15 +38,20 @@
         <h1>Veículos Estacionados</h1>
         <section id="tblSection">
             <table class="dkTheme-table" id="tabela">
-                <tr id="trTitulo">
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">Nome</th>
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">Veículo</th>
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">Placa</th>
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">H.Entrada</th>
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">H.Saida</th>
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">Editar</th>
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">Encerrar</th>
-                </tr>
+                <thead>
+                    <tr id="trTitulo">
+                        <th id="dkTheme-tblTitulo" class="tblTitulo">Nome</th>
+                        <th id="dkTheme-tblTitulo" class="tblTitulo">Veículo</th>
+                        <th id="dkTheme-tblTitulo" class="tblTitulo">Placa</th>
+                        <th id="dkTheme-tblTitulo" class="tblTitulo">H.Entrada</th>
+                        <th id="dkTheme-tblTitulo" class="tblTitulo">H.Saida</th>
+                        <th id="dkTheme-tblTitulo" class="tblTitulo">Editar</th>
+                        <th id="dkTheme-tblTitulo" class="tblTitulo">Encerrar</th>
+                    </tr>
+                </thead>
+                <tbody id=container-registros>
+                
+                </tbody>
             </table>
             </section>
         <button id="btnAddVeiculo">Adicionar Novo Veículo</button>

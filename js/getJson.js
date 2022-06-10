@@ -1,43 +1,91 @@
-const url ='http://localhost/leonardo/ProjetoEstacionamento/api/registros'
-fetch(url)
-.then(function(response){
-    return response.json();
-})
-.then(function(tabela){
-    const clientes = json.fastparking[0].registros;
+'use strict'
 
-    let placeholder = document.querySelector("#tabela");
-    let out = `
-                <tr id="trTitulo">
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">Nome</th>
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">Veículo</th>
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">Placa</th>
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">Data</th>
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">H.Entrada</th>
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">Editar</th>
-                    <th id="dkTheme-tblTitulo" class="tblTitulo">Encerrar</th>
-                </tr>
-    `;
-    for(let cliente of clientes){
+import{fecharNovoRegistro, abrirFechamento, abrirNovoRegistro, finalizarFechamento} from'./modal.js'
+import{lerClientes, novoCliente, atualizarRegistro, deletarRegistro} from './cliente.js'
 
-        out +=`
-      
-            <tr class="trConteudo">
-                    <td id="dkTheme-tblConteudo" class="TblConteudo">${cliente.nome}</td>
-                    <td id="dkTheme-tblConteudo" class="TblConteudo">${cliente.veiculo}</td>
-                    <td id="dkTheme-tblConteudo" class="TblConteudo">${cliente.placa}</td>
-                    <td id="dkTheme-tblConteudo" class="TblConteudo">${cliente.dataEntrada}</td>
-                    <td id="dkTheme-tblConteudo" class="TblConteudo">${cliente.horaSaida}</td>
-                    <td id="dkTheme-tblConteudo" class="TblConteudo">
-                        <button id="editar">Editar</button>
-                    </td>
-                    <td id="dkTheme-tblConteudo" class="TblConteudo">
-                        <button id="deletar">Encerrar</button>
-                    </td>     
-                </tr> 
-        `;
-    }
-    placeholder.innerHTML = out;
+const criarLinha = ({nome_cliente, placa_veiculo, modelo_veiculo, entrada, saida, id})=>{
+
+    
+    const linha = document.createElement('tr')
+    linha.innerHTML = `
+    <td id="dkTheme-tblConteudo" class="TblConteudo">${nome_cliente}</td>
+    <td id="dkTheme-tblConteudo" class="TblConteudo">${modelo_veiculo}</td>
+    <td id="dkTheme-tblConteudo" class="TblConteudo">${placa_veiculo}</td>
+    <td id="dkTheme-tblConteudo" class="TblConteudo">${entrada}</td>
+    <td id="dkTheme-tblConteudo" class="TblConteudo">${saida}</td>
+    <td id="dkTheme-tblConteudo" class="TblConteudo">
+        <button id="editar"
+        onClick="editRegistro(${id})">Editar</button>
+    </td>
+    <td id="dkTheme-tblConteudo" class="TblConteudo">
+        <button id="deletar" onClick="delRegistro(${id})" >Encerrar</button>
+    </td>  
+    `
+    return linha
+
 }
-)
-document.getElementById('print').addEventListener('click', ()=>print())
+
+const atualizarTabela = async () =>{
+    const registroContainer = document.getElementById('container-registros')
+
+    const registro = await lerClientes()
+
+    
+    const linhas = registro.map(criarLinha)
+    registroContainer.replaceChildren(...linhas)
+}
+
+const ehEdicao = () => document.getElementById('nome').hasAttribute('data.id')
+
+const salvarRegistro = async () => {
+
+    const form = document.getElementById('modal-form')
+
+    const registro = {
+        "nome_cliente": document.getElementById('nome').value,
+        "modelo_veiculo": document.getElementById('veiculo').value,
+        "placa_veiculo": document.getElementById('placa').value
+    }
+
+    if(form.reportValidity()){
+        registro.id = document.getElementById('nome').dataset.id
+        await atualizarTabela(registro)
+    }else{
+        await novoCliente(registro)
+    }
+
+    fecharNovoRegistro()
+
+    atualizarTabela()
+
+}
+
+const preencherForm = (cliente) => {
+    document.getElementById('nome').value = registro.nome_cliente
+    document.getElementById('veiculo').value = registro.modelo_veiculo
+    document.getElementById('placa').value = registro.placa_veiculo
+}
+
+globalThis.editRegistro = async(id) =>{
+
+    const registro = await lerClientes(id)
+
+    console.log(registro)
+
+    preencherForm(registro)
+
+    abrirNovoRegistro()
+
+}
+
+globalThis.delRegistro = async (id) => {
+    await deletarRegistro(id)
+    atualizarTabela()
+
+}
+
+
+
+document.getElementById('btnFinalizar').addEventListener('click', salvarRegistro)
+document.getElementById('btnAddVeiculo').addEventListener('click', abrirNovoRegistro)
+atualizarTabela();

@@ -32,6 +32,9 @@
 
                 require_once(SRC.'model/bd/registros.php');
 
+
+             
+
                 if (insertRegistro($arrayDados))
                 {
                     return true;
@@ -40,7 +43,7 @@
                     return array ('idErro' => 1, 'message' =>'Não foi possível inserir os dados');
                 }
 
-            } else 
+            }   else 
             {
                 return array ('idErro' => 2, 'message' => 'Existem campos obrigatórios que não foram preenchidos');
             }
@@ -53,8 +56,10 @@
         {
             require_once(SRC.'model/bd/registros.php');
 
+
             $dados = selectByIdRegistro($id);
 
+           
             if (!empty($dados))
             {
                 return $dados;

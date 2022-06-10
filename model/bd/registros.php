@@ -31,6 +31,7 @@
                 $cont++;
             }
 
+
             fecharConexaoMySql($conexao);
 
             if (isset($arrayDados))
@@ -103,7 +104,7 @@
     {
         $conexao = conexaoMySql();
 
-        $sql = "delete from registros where id = " .$id;
+        $sql = "delete from registro where id = " .$id;
 
         if (mysqli_query($conexao, $sql))
         {
@@ -122,7 +123,7 @@
     {
         $conexao = conexaoMySql();
 
-        $sql = "select * from registros where id = " .$id;
+        $sql = "select * from registro where id = " .$id;
 
         $result = mysqli_query($conexao, $sql);
 

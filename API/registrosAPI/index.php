@@ -8,7 +8,7 @@ $app = new \Slim\app();
 $app->get('/registros', function($request, $response, $args)
 {
 
-    echo('dadw');
+    
     require_once('../modulo/config.php');
     require_once('../controller/registrosController.php');
     
@@ -35,7 +35,7 @@ $app->get('/registros', function($request, $response, $args)
     }
 });
 
-/*
+
 // Endpoint para listar apenas um registro
 $app -> get('/registros/{id}', function($request, $response, $args)
 {
@@ -70,7 +70,7 @@ $app -> get('/registros/{id}', function($request, $response, $args)
                                 -> write('{"message" : "Item não encontrado"}');
         }
 });
-*/
+
 // Endpoint para inserir um registro
 $app -> post('/registros', function($request, $response, $args)
 {
@@ -80,6 +80,7 @@ $app -> post('/registros', function($request, $response, $args)
 
     switch ($contentType[0])
     {
+
         case 'multipart/form-data' :
 
             $dadosBody = $request -> getParsedBody();
@@ -129,8 +130,8 @@ $app -> post('/registros', function($request, $response, $args)
 
     }
 });
-/*
-// Endpoint para deletar registro
+
+//  Endpoint para deletar registro
 $app -> delete('/registros/{id}', function($request, $response, $args)
 {
     if (is_numeric($args['id']))
@@ -140,11 +141,15 @@ $app -> delete('/registros/{id}', function($request, $response, $args)
         require_once('../modulo/config.php');
         require_once('../controller/registrosController.php');
 
+        
         if ($dados = buscarRegistro($id))
         {
+           
             $arrayDados = array("id" => $id);
 
             $resposta = excluirRegistro($arrayDados);
+
+         
 
             if (is_bool($resposta) && $resposta == true)
             {
@@ -161,7 +166,7 @@ $app -> delete('/registros/{id}', function($request, $response, $args)
         }
     }
 });
-*/
+
 $app->run();
 
 ?>
