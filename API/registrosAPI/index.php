@@ -81,7 +81,7 @@ $app -> post('/registros', function($request, $response, $args)
     switch ($contentType[0])
     {
 
-        case 'multipart/form-data' :
+        case 'application/json' :
 
             $dadosBody = $request -> getParsedBody();
 
